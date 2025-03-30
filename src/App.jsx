@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './Header';
-import { Notepad, Stickynote, AddButton } from './Notepad';
+import { Notepad, Stickynote } from './Notepad';
 
 function App() {
   const [message, setMessage] = useState('');
@@ -16,7 +16,7 @@ function App() {
       </div> */}
 
       <div className="flex flex-col justify-center items-center mt-10">
-        <AddButton setMessage={setMessage}></AddButton>
+        {/* <AddButton setMessage={setMessage}></AddButton> */}
         <Notepad message={message}></Notepad>
       </div>
 
