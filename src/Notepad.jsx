@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
 import closeButton from './assets/circle-xmark.png';
+import 'animate.css';
 
 function Notepad() {
   const [messages, setMessages] = useState([]);
@@ -74,14 +75,22 @@ function Notepad() {
 
           {showInput && (
             <div className="overflow-auto fixed top-0 left-0 w-full h-full bg-[#00000089] flex flex-col md:flex-row gap-7 justify-center items-center">
-              <div className="bg-white p-4 rounded-2xl relative shadow-lg shadow-black border-[#0c77c342] border-2 flex flex-col">
-                <button className="flex justify-end w-full">
+              <div className="animate__jello bg-white p-4 rounded-2xl relative shadow-lg shadow-black border-[#0c77c342] border-2 flex flex-col">
+                <div className= " grid grid-cols-2 gap-4">
+
+                  <p className="text-gray-600  h-5 ubuntu-light-italic">
+                    Your Notepad! 
+                  </p>
+
+                  <button className="flex justify-end w-full">
                   <img
                     onClick={closeWindowFalse}
                     src={closeButton}
-                    className="w-5 bg-red-400 rounded-3xl hover:bg-red-300"
+                    className="w-5 h-5 bg-red-400 rounded-3xl hover:bg-red-300"
                   />
                 </button>
+                </div>
+                
                 <input
                   type="text"
                   value={title}
@@ -122,6 +131,7 @@ function Notepad() {
 
   return (
     <>
+    
       <div className="justify-center items-center flex flex-col bg-[rgba(255,255,255,0.19)] rounded-2xl bg-opacity-20 w-[83vw] h-auto m-10 border-2 border-gray-500 p-4">
         <AddButton setMessages={setMessages} />
         <div className="hidden sm:grid mt-4 grid-cols-1 gap-4 ipad:block ipad:grid-cols-2 md:grid-cols-3">
@@ -147,14 +157,16 @@ function Stickynote({ title, message, index, setMessages }) {
   };
 
   return (
-    <div className="p-10 bg-white mb-10 text-black border border-gray-300 w-full rounded-lg shadow-md md:w-[25vw] h-[400px] flex flex-col overflow-hidden">
+    <div className="p-10 bg-white mb-10 text-black border border-gray-300 w-full rounded-lg shadow-md md:w-[25vw] min-h-[400px] flex flex-col overflow-hidden">
       <h3 className="font-bold text-2xl truncate mb-2">{title}</h3>
 
-      <div className="overflow-hidden">
+      <div className="flex-grow overflow-hidden">
         <p className="mb-5 mt-0 whitespace-normal break-words text-lg md:text-md lg:text-md overflow text-ellipsis">
-          <hr className="hidden mb-2" />
+          <div>
+            <hr className="hidden mb-2" />
           {message}
           <hr className="hidden mt-2" />
+          </div>
         </p>
       </div>
 

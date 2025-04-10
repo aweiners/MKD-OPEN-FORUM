@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'animate.css';
 
 .jersey {
   font-family: 'Jersey 15', sans-serif;
@@ -37,4 +38,3 @@
   font-weight: 200;
   font-style: italic;
 }
-

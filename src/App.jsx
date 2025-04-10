@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from './Header';
 import { Notepad, Stickynote } from './Notepad';
+import 'animate.css';
 
 function App() {
   const [message, setMessage] = useState('');
